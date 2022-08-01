@@ -1,17 +1,19 @@
-import "../css/TodoGenerator.css"
-
-function TodoGenerator(){
-
-
-const addClick=()=>{
-    console.log('点击了')
-}
-    return (
-        <div className="todo-generator">
-            <input type="text" />
-            <button onClick={addClick}>add</button>
-        </div>
-    );
+import "../css/TodoGenerator.css";
+import { useState } from "react";
+function TodoGenerator() {
+  const addClick = () => {
+    console.log(listText);
+  };
+  const textChange = (event) => {
+    setListText(event.target.value)
+  };
+  const [listText, setListText] = useState("");
+  return (
+    <div className="todo-generator">
+      <input value={listText} type="text" onChange={textChange}/>
+      <button onClick={addClick}>add</button>
+    </div>
+  );
 }
 
 export default TodoGenerator;
