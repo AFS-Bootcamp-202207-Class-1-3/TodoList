@@ -1,16 +1,17 @@
 import "../css/TodoGenerator.css";
 import { useState } from "react";
-function TodoGenerator() {
+function TodoGenerator(props) {
+  const { updateList } = props;
   const addClick = () => {
-    console.log(listText);
+    updateList(listText);
   };
   const textChange = (event) => {
-    setListText(event.target.value)
+    setListText(event.target.value);
   };
   const [listText, setListText] = useState("");
   return (
     <div className="todo-generator">
-      <input value={listText} type="text" onChange={textChange}/>
+      <input value={listText} type="text" onChange={textChange} />
       <button onClick={addClick}>add</button>
     </div>
   );

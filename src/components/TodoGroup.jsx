@@ -1,12 +1,13 @@
 import TodoItem from "./TodoItem";
-import "../css/TodoGroup.css"
+import "../css/TodoGroup.css";
 
-function TodoGroup() {
+function TodoGroup(props) {
+  const { todoList } = props;
+        
+  const todoItems=todoList.map((element, index)=> <TodoItem key={index} todoItemText={element}/>);
   return (
     <div className="todo-group">
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {todoItems}
     </div>
   );
 }
