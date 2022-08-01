@@ -1,10 +1,11 @@
 import TodoGenerator from './components/TodoGenerator';
+import TodoItem from './components/TodoItem';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <TodoGenerator />
+      <TodoItem />
     </div>
   );
 }
