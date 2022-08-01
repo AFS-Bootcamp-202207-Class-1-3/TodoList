@@ -1,4 +1,5 @@
 import TodoItem from "./TodoItem";
+import "../css/TodoGroup.css"
 
 function TodoGroup() {
   return (
