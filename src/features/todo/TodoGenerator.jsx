@@ -1,11 +1,17 @@
-import "../css/TodoGenerator.css";
+import "../../css/TodoGenerator.css";
 import { useState } from "react";
+import { addTodo } from "./todoSlice";
+import { useDispatch } from "react-redux";
+
 function TodoGenerator(props) {
   const [listText, setListText] = useState("");
-  const { updateList } = props;
+
+  const dispatch = useDispatch();
   const addClick = () => {
-    updateList(listText);
+    setListText("");
+    dispatch(addTodo(listText));
   };
+
   const textChange = (event) => {
     setListText(event.target.value);
   };
