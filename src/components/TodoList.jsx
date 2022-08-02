@@ -6,8 +6,7 @@ import { useState } from "react";
 function TodoList(){
     const [todoList, settodoList] = useState([]);
     const updateList=(listText)=>{
-        let list=[...todoList, listText];
-        settodoList(list);
+        settodoList([...todoList, listText]);
     }
     return (
         <div className="todo-list">
