@@ -24,18 +24,19 @@ const todoSlice = createSlice({
     },
     doneTodo(state, action) {
       state.todos.map((todo) => {
-        if (todo.id == action.payload) {
+        if (todo.id === action.payload) {
           todo.done = !todo.done;
         }
       });
     },
     deleteTodo(state, action) {
       //   state.todos.splice(action.payload, 1);
-      state.todos.forEach(function (item, index, arr) {
-        if (item.id == action.payload) {
-          arr.splice(index, 1);
-        }
-      });
+      state.todos=state.todos.filter((todo)=>{return  todo.id!==action.payload});
+    //   state.todos.forEach(function (item, index, arr) {
+    //     if (item.id === action.payload) {
+    //       arr.splice(index, 1);
+    //     }
+    //   });
     },
   },
 });
